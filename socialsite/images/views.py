@@ -59,7 +59,7 @@ def image_list(request):
     try:
         images = paginator.page(page)
     except PageNotAnInteger:
-        images.paginator.page(1)
+        images = paginator.page(1)
     except EmptyPage:
         if images_only:
             return HttpResponse('')
